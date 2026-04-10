@@ -8,11 +8,25 @@
     "dist",
     "src/tokens"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "svelte": "./src/index.ts",
   "scripts": {
     "dev": "echo 'dev script — to be configured in task 002'",
-    "build": "echo 'build script — to be configured in task 002'",
-    "check": "echo 'check script — to be configured in task 002'",
+    "build": "vite build",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
     "storybook": "echo 'storybook script — to be configured in task 004'",
     "build-storybook": "echo 'build-storybook script — to be configured in task 004'"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "svelte": "^5.55.3",
+    "svelte-check": "^4.4.6",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8"
   }
 }
