@@ -1,6 +1,12 @@
 // Storybook preview configuration for the Motif design library.
 // Applies global decorators and parameters that affect every story.
 
+// Import the distributed token files directly so every story canvas receives
+// the same design tokens that library consumers will receive. These are the
+// source-of-truth files — do NOT import src/app.css here.
+import '../src/tokens/public.css';
+import '../src/tokens/base.css';
+
 // Apply a global decorator to every story.
 // Sets data-colour-mode="dark" on the root HTML element so that Motif's
 // CSS custom properties resolve to their dark-mode values by default.
