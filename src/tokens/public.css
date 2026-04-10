@@ -1,0 +1,509 @@
+/**
+ * Motif Design Library — Public UI Tokens
+ *
+ * CSS custom properties for externally-facing UI.
+ * Import this file in any project that uses the public brand palette.
+ *
+ * Usage: @import '@motif/design/public';
+ */
+
+@import 'tailwindcss';
+
+@layer base {
+	:root {
+		/* === 1. BRAND COLOURS ================================================
+		   Warm sunset palette — OKLCH format for perceptual uniformity
+		   ==================================================================== */
+		--fire-engine-red: oklch(0.53 0.2 28);
+		--burnt-sunset: oklch(0.64 0.16 44);
+		--aubergine: oklch(0.44 0.11 319);
+		--sky-blue: oklch(0.77 0.11 229);
+		--blush-pink: oklch(0.78 0.15 340);
+		--powder-sand: oklch(0.93 0.02 68);
+		--olive-green: oklch(0.52 0.1 130);
+		--navy-royal: oklch(0.35 0.14 260);
+		--amber: oklch(0.68 0.15 70);
+		--charcoal-ember: oklch(0.16 0.02 60);
+		/* Dark background base */
+
+		/* === 2. SURFACES =====================================================
+		   Page and surface backgrounds
+		   ==================================================================== */
+		--bg-primary: var(--charcoal-ember);
+		/* light: #f0e8dd */
+		--bg-glass: rgba(20, 30, 16, 0.4);
+		/* light: rgba(226, 218, 206, 0.9) */
+		--bg-glass-solid: #1a1614;
+		/* light: #dad2c6 */
+		--bg-primary-rgb: 20, 11, 5;
+		/* light: 240, 232, 221 */
+
+		/* === 3. BORDERS ======================================================
+		   Glass-effect borders
+		   ==================================================================== */
+		--border-glass: rgba(243, 243, 243, 0.1);
+		/* light: rgba(60, 50, 40, 0.08) */
+		--border-glass-hover: rgba(243, 243, 243, 0.2);
+		/* light: rgba(60, 50, 40, 0.15) */
+
+		/* === 4. TEXT =========================================================
+		   Hierarchy: primary > secondary > muted
+		   ==================================================================== */
+		--text-primary: var(--powder-sand);
+		/* light: #2d2a26 */
+		--text-secondary: oklch(0.7 0.02 68);
+		/* light: #4a4540 */
+		--text-muted: oklch(0.6 0.02 68);
+		/* light: #7a746c */
+
+		/* === 5. ACCENT =======================================================
+		   Primary action colour derived from brand
+		   ==================================================================== */
+		--accent: var(--fire-engine-red);
+		--accent-hover: oklch(0.42 0.17 28);
+		--accent-rgb: (206, 32, 41);
+		/* For rgba() usage */
+
+		/* Accent opacity variants (for TagPill, badges, selection states) */
+		--accent-bg-subtle: rgba(206, 32, 41, 0.05);
+		--accent-bg: rgba(206, 32, 41, 0.1);
+		--accent-bg-emphasis: rgba(206, 32, 41, 0.15);
+		--accent-border: rgba(206, 32, 41, 0.3);
+
+		/* === 5b. ACCENT ROLES ================================================
+		   Secondary, tertiary, depth, and playful accent roles surface the
+		   full brand palette beyond the primary fire-engine-red accent.
+		   Each role has opacity variants following the --accent-bg-* pattern.
+		   ==================================================================== */
+		--accent-secondary: var(--burnt-sunset);
+		/* Hover warmth, secondary highlights */
+		--accent-tertiary: var(--sky-blue);
+		/* Informational elements, workflow indicators */
+		--accent-depth: var(--aubergine);
+		/* Overlapping regions, synthesis, depth */
+		--accent-playful: var(--blush-pink);
+		/* Tags, highlights, notification dots */
+
+		/* Secondary accent opacity variants */
+		--accent-secondary-bg: rgba(217, 101, 43, 0.1);
+		--accent-secondary-border: rgba(217, 101, 43, 0.3);
+
+		/* Depth accent opacity variants */
+		--accent-depth-bg: rgba(109, 63, 121, 0.1);
+		--accent-depth-border: rgba(109, 63, 121, 0.3);
+
+		/* === 5c. GRADIENTS ===================================================
+		   Controlled gradient tokens for accent elements only.
+		   RULE: Gradients only on accent elements (borders, small surfaces,
+		   text). Never on backgrounds.
+		   ==================================================================== */
+		--gradient-sunset: linear-gradient(135deg, var(--hex-red), var(--hex-sunset));
+		--gradient-depth: linear-gradient(135deg, var(--hex-navy), var(--hex-aubergine));
+		--gradient-warmth: linear-gradient(135deg, var(--hex-sunset), var(--hex-amber));
+
+		/* === 6. CARDS ========================================================
+		   Card styling (glassmorphic dark, tactile light)
+		   ==================================================================== */
+		--card-bg: rgba(20, 16, 16, 0.4);
+		/* light: #f0e8dc */
+		--card-border: rgba(243, 243, 243, 0.1);
+		/* light: rgba(255, 255, 255, 0.2) */
+		--card-border-hover: rgba(243, 243, 243, 0.2);
+		/* light: rgba(255, 255, 255, 0.4) */
+		--card-border-top: var(--card-border);
+		/* light: rgba(255, 255, 255, 0.8) */
+		--card-border-left: var(--card-border);
+		/* light: rgba(255, 255, 255, 0.5) */
+		--card-border-right: var(--card-border);
+		/* light: rgba(60, 50, 40, 0.08) */
+		--card-border-bottom: var(--card-border);
+		/* light: rgba(60, 50, 40, 0.12) */
+		--card-radius: 0.75rem;
+		--card-blur: 10px;
+		--card-padding: var(--space-6);
+		--card-padding-sm: var(--space-5);
+
+		/* === 7. BUTTON SHADOWS ===============================================
+		   Shadow tokens for interactive elements
+		   ==================================================================== */
+		--button-shadow: none;
+		/* light: layered drop shadow */
+		--button-shadow-hover: 0 4px 12px rgba(206, 32, 41, 0.3);
+		/* light: layered drop shadow */
+		--button-shadow-active: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+		/* light: inset pressed */
+		--card-shadow: none;
+		/* light: directional warm shadow */
+		--card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+		/* light: directional warm shadow */
+		--input-shadow: none;
+		/* light: inset pressed */
+
+		/* === 8. INPUTS =======================================================
+		   Form field styling — heights match Button size tiers
+		   ==================================================================== */
+		--input-bg: transparent;
+		/* light: rgba(255, 255, 255, 0.5) */
+		--input-height: 3rem;
+		--input-height-sm: 2.5rem;
+		--input-height-lg: 3.5rem;
+
+		/* === 9. COMPONENT SHADOWS ============================================
+		   Shadows for overlaying components
+		   ==================================================================== */
+		--shadow-header: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+		/* Select component tokens */
+		--select-selected-bg: rgba(206, 32, 41, 0.15);
+		--select-selected-highlighted-bg: rgba(206, 32, 41, 0.2);
+		--select-dropdown-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+		/* light: rgba(60, 50, 40, 0.15) */
+		--tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+		/* light: rgba(0, 0, 0, 0.08) */
+
+		/* === 10. ELEVATION / Z-INDEX =========================================
+		   Semantic z-index scale — use tokens instead of magic numbers.
+		   Ordered from back to front: base < raised < dropdown < sticky
+		   < overlay < toast < widget.
+		   ==================================================================== */
+		--z-base: 0;
+		--z-raised: 1;
+		--z-dropdown: 10;
+		--z-sticky: 20;
+		--z-overlay: 30;
+		--z-toast: 40;
+		--z-widget: 50;
+
+		/* === 11. SPACING =====================================================
+		   10-step spacing scale with smooth progression
+		   ==================================================================== */
+		--space-1: 4px;
+		--space-2: 8px;
+		--space-3: 12px;
+		--space-4: 16px;
+		--space-5: 24px;
+		--space-6: 32px;
+		--space-7: 48px;
+		--space-8: 64px;
+		--space-9: 96px;
+		--space-10: 128px;
+
+		/* === 11. LAYOUT ======================================================
+		   Fixed dimensions for structural elements
+		   ==================================================================== */
+		--header-height: 80px;
+		--back-link-height: 0px;
+		/* Overridden to 46px by BackLink component when fixed mode is active */
+		--focus-ring: var(--hex-red);
+		/* :focus-visible outline colour */
+
+		/* Border radius scale */
+		--radius: 0.5rem;
+		/* 8px — default */
+		--radius-lg: 1rem;
+		/* 16px — moderate rounding for expanded cards */
+		--radius-bubble: 1.75rem;
+		/* 28px — chat message bubbles */
+		--radius-pill: 3rem;
+		/* Fully rounded */
+
+		/* Page layout spacing */
+		--page-top-padding: var(--space-8);
+		--page-top-padding-mobile: var(--space-8);
+		--page-content-max-width: 1280px;
+		--page-padding-x: var(--space-5);
+		--page-padding-x-mobile: var(--space-4);
+
+		/* Section layout */
+		--section-padding-y: var(--space-10);
+		/* 128px — generous section spacing (use for all sections including hero) */
+		--section-padding-x: var(--page-padding-x);
+		/* 24px — horizontal padding */
+		--section-header-max-width: 36rem;
+		/* Max width for section subtitles */
+
+		/* Layout structural tokens */
+		--layout-hero-min-height: calc(80vh - var(--header-height));
+
+		/* Scroll anchor offset — accounts for fixed header + back-link row */
+		--scroll-margin-top: calc(var(--header-height) + var(--back-link-height) + 16px);
+
+		/* === 12. TYPOGRAPHY ==================================================
+		   Font families and semantic type-size tokens
+		   ==================================================================== */
+		--font-body: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+		--font-mono: 'Azeret Mono', monospace;
+		--font-display: 'IBM Plex Serif', serif;
+		--font-drop-cap: 'Rock Salt', Georgia, cursive;
+
+		/* Semantic type sizes — use these instead of Tailwind text-* utilities
+		   for consistent sizing across public-facing pages */
+		--text-caption: 0.75rem;
+		/* 12px — small labels, metadata */
+		--text-body: 1.125rem;
+		/* 18px — matches body font-size */
+		--text-lead: 1.25rem;
+		/* 20px — subheadlines, intros */
+
+		/* === 13. STATE COLOURS ===============================================
+		   Status indicators and feedback colours
+		   ==================================================================== */
+		--colour-success: var(--hex-olive);
+		--colour-success-bg: rgba(90, 122, 71, 0.2);
+		--colour-warning: var(--hex-amber);
+		--colour-warning-bg: rgba(212, 169, 70, 0.2);
+		--colour-error: var(--hex-red);
+		--colour-error-bg: rgba(206, 32, 41, 0.2);
+		--colour-info: var(--hex-navy);
+		--colour-info-bg: rgba(46, 61, 107, 0.2);
+
+		/* Status badge tokens (text colours for badges) */
+		--status-success-text: var(--hex-olive);
+		--status-warning-text: var(--hex-amber);
+		--status-error-text: var(--hex-red);
+		--status-info-text: var(--hex-blush);
+
+		/* === 14. INTERACTIONS ================================================
+		   Interaction and transition defaults
+		   ==================================================================== */
+
+		/* Interaction states */
+		--state-hover-opacity: 0.8;
+		--state-active-opacity: 0.9;
+		--state-disabled-opacity: 0.5;
+
+		/* Shared easing curves — reusable across the design system */
+		--ease-spring: linear(
+			0,
+			0.006,
+			0.025 2.8%,
+			0.101 6.1%,
+			0.539 18.9%,
+			0.721 25.3%,
+			0.849 31.5%,
+			0.937 38.1%,
+			0.981 43.8%,
+			1.007 50.4%,
+			1.022 57%,
+			1.024 62%,
+			1.015 68%,
+			1.007 76%,
+			1.003 84%,
+			1
+		);
+		--ease-spring-wobbly: linear(
+			0,
+			0.004,
+			0.016 2.5%,
+			0.063 5%,
+			0.25 10%,
+			0.563 17.5%,
+			0.806 22.5%,
+			0.938 27.5%,
+			1.026 32.5%,
+			1.078 37.5%,
+			1.096 42.5%,
+			1.086 47.5%,
+			1.056 52.5%,
+			1.026 57.5%,
+			1.006 62.5%,
+			0.994 67.5%,
+			0.99 72.5%,
+			0.994 77.5%,
+			0.998 82.5%,
+			1.001 87.5%,
+			1.001 92.5%,
+			1
+		);
+
+		/* Duration scale — standard timing for all animations */
+		--duration-instant: 100ms;
+		--duration-fast: 200ms;
+		--duration-normal: 350ms;
+		--duration-slow: 500ms;
+		--duration-spring: 600ms;
+
+		/* Transition defaults — composed from duration tokens */
+		--transition-fast: var(--duration-fast) ease;
+		--transition-normal: var(--duration-fast) ease;
+		--transition-slow: var(--duration-normal) ease;
+
+		/* Colour mode transition (for dark/light mode switching) */
+		--colour-mode-transition:
+			background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+			border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+			fill 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+		/* === 15. HEX / SVG ===================================================
+		   Centralised hex values for illustrations and SVG compatibility
+		   ==================================================================== */
+
+		/* Brand colours (hex equivalents) — 1:1 with OKLCH brand tokens */
+		--hex-red: #ce2029;
+		/* fire-engine-red */
+		--hex-sunset: #d9652b;
+		/* burnt-sunset */
+		--hex-aubergine: #6d3f79;
+		/* aubergine */
+		--hex-sky: #5bc0eb;
+		/* sky-blue */
+		--hex-blush: #f68fd5;
+		/* blush-pink */
+		--hex-sand: #d4b896;
+		/* powder-sand */
+		--hex-olive: #5a7a47;
+		/* olive-green */
+		--hex-navy: #2e3d6b;
+		/* navy-royal */
+		--hex-amber: #d4a946;
+		/* amber */
+		--hex-dark: #141010;
+		/* charcoal-ember (dark background) */
+		--hex-light: #f3f3f3;
+		/* Light text/labels */
+
+		/* Stroke widths — standardised scale */
+		--stroke-thin: 1;
+		--stroke-normal: 1.5;
+		--stroke-medium: 2;
+		--stroke-thick: 3;
+
+		/* Opacity hierarchy */
+		--opacity-primary: 1;
+		--opacity-secondary: 0.6;
+		--opacity-tertiary: 0.4;
+		--opacity-background: 0.2;
+		--opacity-line: 0.3;
+
+		/* === 17. CHARTS ======================================================
+		   Chart-specific tokens for D3.js visualisations (public pages only)
+		   ==================================================================== */
+
+		/* Data series colours (public pages) — brand-aligned warm sunset palette */
+		--chart-series-1: var(--hex-red);
+		--chart-series-2: var(--hex-sunset);
+		--chart-series-3: var(--hex-amber);
+		--chart-series-4: var(--hex-olive);
+		--chart-series-5: var(--hex-navy);
+		--chart-series-6: var(--hex-sky);
+		--chart-series-7: var(--hex-aubergine);
+		--chart-series-8: var(--hex-blush);
+
+		/* Chart structural tokens */
+		--chart-axis-colour: var(--text-muted);
+		--chart-grid-colour: var(--card-border);
+
+		/* Chart background tokens */
+		--chart-bg: var(--card-bg);
+		--chart-border: var(--card-border);
+
+		/* Tooltip tokens */
+		--chart-tooltip-bg: var(--bg-glass);
+		--chart-tooltip-border: var(--card-border);
+		--chart-tooltip-text: var(--text-primary);
+
+		/* Semantic state colours */
+		--chart-positive: var(--colour-success);
+		--chart-negative: var(--colour-error);
+		--chart-neutral: var(--text-muted);
+		--chart-warning: var(--colour-warning);
+
+		/* Chart spacing */
+		--chart-padding: var(--space-5);
+
+		/* Chart margin convention — values MUST be unitless integers.
+		   D3.js reads these via parseInt() for SVG coordinate maths.
+		   CSS unit suffixes (px, rem) would break scale/axis calculations. */
+		--chart-margin-top: 20;
+		--chart-margin-right: 20;
+		--chart-margin-bottom: 40;
+		--chart-margin-left: 50;
+
+		/* Chart typography */
+		--chart-label-size: 0.75rem;
+		--chart-title-size: 1rem;
+		--chart-value-size: 0.875rem;
+		--chart-axis-font-size: 0.625rem;
+		--chart-axis-font-weight: 500;
+		--chart-axis-letter-spacing: 0.02em;
+
+		/* Chart animation */
+		--chart-transition-duration: 300ms;
+		--chart-transition-easing: ease-out;
+
+		/* === 18. DATA SCIENCE ================================================
+		   Specialised tokens for ML/experiment visualisations
+		   ==================================================================== */
+
+		/* Heatmap colour scale — warm palette */
+		--heatmap-cold: var(--hex-sand);
+		--heatmap-neutral: var(--hex-amber);
+		--heatmap-hot: var(--hex-red);
+
+		/* Confusion matrix */
+		--matrix-true-positive: var(--colour-success);
+		--matrix-true-negative: var(--colour-success);
+		--matrix-false-positive: var(--colour-error);
+		--matrix-false-negative: var(--colour-error);
+		--matrix-diagonal-opacity: 0.8;
+		--matrix-off-diagonal-opacity: 0.4;
+
+		/* Experiment comparison */
+		--experiment-baseline: var(--text-muted);
+		--experiment-variant-a: var(--chart-series-1);
+		--experiment-variant-b: var(--chart-series-2);
+		--experiment-variant-c: var(--chart-series-3);
+
+		/* === 20. GRID PATTERN ================================================
+		   Background grid visible across all pages for technical aesthetic
+		   ==================================================================== */
+		--grid-size: 40px;
+		--grid-colour: rgba(243, 243, 243, 0.03);
+		/* light: rgba(60, 50, 40, 0.04) */
+		--grid-colour-accent: rgba(243, 243, 243, 0.06);
+		/* light: rgba(60, 50, 40, 0.08) */
+		--grid-opacity: 0.8;
+		--grid-opacity-accent: 0.6;
+
+		/* === 21. BLOG / CATEGORY =============================================
+		   Category colour assignments for blog content taxonomy
+		   Agents:         Fire Engine Red
+		   Workflows:      Sky Blue
+		   Synthesis:      Burnt Sunset
+		   Data/ML:        Navy Royal
+		   Design:         Blush Pink
+		   Infrastructure: Olive Green
+		   ==================================================================== */
+		--category-agents: var(--fire-engine-red);
+		--category-workflows: var(--sky-blue);
+		--category-synthesis: var(--burnt-sunset);
+		--category-data: var(--navy-royal);
+		--category-design: var(--blush-pink);
+		--category-infra: var(--olive-green);
+
+		/* === 22. BUTTON VARIANTS =============================================
+		   Dark mode defaults — overridden in light mode
+		   ==================================================================== */
+		--button-secondary-hover-bg: transparent;
+		--button-secondary-hover-border: transparent;
+		--button-ghost-hover-bg: transparent;
+		--button-outline-hover-shadow: none;
+
+		/* === 23. WIDGET SYSTEM ===============================================
+		   Tokens for the floating widget bar (homepage top-right corner)
+		   ==================================================================== */
+		--widget-icon-size: 40px;
+		--widget-transition-duration: 0.5s;
+		--widget-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+		--widget-pulse-duration: 2.5s;
+
+		/* Spring easing — aliases shared tokens for backwards compatibility */
+		--widget-spring-easing: var(--ease-spring);
+		--widget-spring-duration: 0.6s;
+
+		/* Underdamped spring — aliases shared wobbly easing */
+		--widget-spring-easing-wobbly: var(--ease-spring-wobbly);
+		--widget-reorganise-duration: 0.8s;
+		--widget-reorganise-stagger: 0.15s;
+	}
+}
