@@ -19,12 +19,15 @@
     "dev": "echo 'dev script — to be configured in task 002'",
     "build": "vite build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "storybook": "echo 'storybook script — to be configured in task 004'",
-    "build-storybook": "echo 'build-storybook script — to be configured in task 004'"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@storybook/addon-svelte-csf": "^5.1.2",
+    "@storybook/svelte-vite": "^10.3.5",
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
     "@tailwindcss/vite": "^4.2.2",
+    "storybook": "^10.3.5",
     "svelte": "^5.55.3",
     "svelte-check": "^4.4.6",
     "tailwindcss": "^4.2.2",
