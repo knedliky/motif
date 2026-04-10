@@ -25,6 +25,12 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "dependencies": {
+    "@fontsource/azeret-mono": "^5.0.0",
+    "@fontsource/hanken-grotesk": "^5.0.0",
+    "@fontsource/ibm-plex-serif": "^5.0.0",
+    "@fontsource/rock-salt": "^5.0.0"
+  },
   "peerDependencies": {
     "svelte": ">=5.0.0"
   },
