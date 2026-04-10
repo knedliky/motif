@@ -11,10 +11,13 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+      "types": "./dist/index.d.ts",
+      "svelte": "./src/index.ts"
+    },
+    "./public": "./src/tokens/public.css",
+    "./admin": "./src/tokens/admin.css",
+    "./base": "./src/tokens/base.css"
   },
-  "svelte": "./src/index.ts",
   "scripts": {
     "dev": "echo 'dev script — to be configured in task 002'",
     "build": "vite build",
