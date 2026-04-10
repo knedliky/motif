@@ -21,13 +21,13 @@
 
 		--admin-bg: var(--charcoal-ember);
 		--admin-bg-page: var(--admin-bg); /* Alias for layout consistency */
-		--admin-bg-elevated: rgb(15, 15, 15);
-		--admin-border: rgba(243, 243, 243, 0.1);
+		--admin-bg-elevated: oklch(6% 0 0); /* converted from rgb(15, 15, 15) */
+		--admin-border: oklch(97% 0 0 / 10%); /* converted from rgba(243, 243, 243, 0.1) */
 		--admin-text: var(--powder-sand);
 		--admin-text-secondary: oklch(0.7 0.02 68);
 		--admin-text-muted: oklch(0.6 0.02 68);
-		--admin-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-		--admin-shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+		--admin-shadow: 0 1px 2px oklch(0% 0 0 / 5%); /* converted from rgba(0, 0, 0, 0.05) */
+		--admin-shadow-elevated: 0 4px 6px -1px oklch(0% 0 0 / 10%), 0 2px 4px -2px oklch(0% 0 0 / 10%); /* converted from rgba(0, 0, 0, 0.1) */
 
 		/* Admin page header typography (smaller than public pages) */
 		--admin-header-size: 1.75rem;
@@ -63,7 +63,7 @@
 		--chart-tooltip-text-admin: var(--admin-text);
 
 		/* Subtle grid overlay for admin chart backgrounds */
-		--chart-grid-subtle-admin: rgba(255, 255, 255, 0.05);
+		--chart-grid-subtle-admin: oklch(100% 0 0 / 5%); /* converted from rgba(255, 255, 255, 0.05) */
 	}
 
 	/* Admin heading override — all admin headings use Hanken Grotesk (body font)
