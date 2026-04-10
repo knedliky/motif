@@ -506,4 +506,16 @@
 		--widget-reorganise-duration: 0.8s;
 		--widget-reorganise-stagger: 0.15s;
 	}
+
+	/* ==========================================================================
+	   REDUCED MOTION — Collapse widget spring and FLIP animations
+	   ========================================================================== */
+
+	@media (prefers-reduced-motion: reduce) {
+		:root {
+			--widget-spring-duration: 0.01ms;
+			--widget-reorganise-duration: 0.01ms;
+			--widget-reorganise-stagger: 0ms;
+		}
+	}
 }
