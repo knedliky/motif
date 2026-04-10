@@ -1,0 +1,4 @@
+/* Entry point for Tailwind CSS — used by Storybook preview only.
+ * This file is not distributed as part of the library build.
+ * Tailwind 4 is zero-config; no tailwind.config.js is required. */
+@import 'tailwindcss';

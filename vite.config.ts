@@ -1,11 +1,14 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
+import tailwindcss from '@tailwindcss/vite';
 
 // Build configuration for the Motif design library.
 // Produces an ES module output with each component individually importable,
 // so consumers can import specific atoms without pulling in the entire library.
 export default defineConfig({
-	plugins: [svelte()],
+	// Tailwind 4 is added via the official Vite plugin — no separate config file required.
+	// The svelte plugin handles Svelte component compilation as before.
+	plugins: [tailwindcss(), svelte()],
 
 	build: {
 		lib: {
