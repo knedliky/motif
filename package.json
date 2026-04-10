@@ -1,0 +1,18 @@
+{
+  "name": "@motif/design",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "description": "Motif design library — tokens and atoms for externally-facing SvelteKit projects",
+  "files": [
+    "dist",
+    "src/tokens"
+  ],
+  "scripts": {
+    "dev": "echo 'dev script — to be configured in task 002'",
+    "build": "echo 'build script — to be configured in task 002'",
+    "check": "echo 'check script — to be configured in task 002'",
+    "storybook": "echo 'storybook script — to be configured in task 004'",
+    "build-storybook": "echo 'build-storybook script — to be configured in task 004'"
+  }
+}
