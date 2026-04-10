@@ -31,9 +31,9 @@
 		   ==================================================================== */
 		--bg-primary: var(--charcoal-ember);
 		/* light: #f0e8dd */
-		--bg-glass: rgba(20, 30, 16, 0.4);
+		--bg-glass: oklch(10% 0.02 150 / 40%); /* converted from rgba(20, 30, 16, 0.4) */
 		/* light: rgba(226, 218, 206, 0.9) */
-		--bg-glass-solid: #1a1614;
+		--bg-glass-solid: oklch(9% 0.01 30); /* converted from #1a1614 */
 		/* light: #dad2c6 */
 		--bg-primary-rgb: 20, 11, 5;
 		/* light: 240, 232, 221 */
@@ -41,9 +41,9 @@
 		/* === 3. BORDERS ======================================================
 		   Glass-effect borders
 		   ==================================================================== */
-		--border-glass: rgba(243, 243, 243, 0.1);
+		--border-glass: oklch(97% 0 0 / 10%); /* converted from rgba(243, 243, 243, 0.1) */
 		/* light: rgba(60, 50, 40, 0.08) */
-		--border-glass-hover: rgba(243, 243, 243, 0.2);
+		--border-glass-hover: oklch(97% 0 0 / 20%); /* converted from rgba(243, 243, 243, 0.2) */
 		/* light: rgba(60, 50, 40, 0.15) */
 
 		/* === 4. TEXT =========================================================
@@ -65,10 +65,10 @@
 		/* For rgba() usage */
 
 		/* Accent opacity variants (for TagPill, badges, selection states) */
-		--accent-bg-subtle: rgba(206, 32, 41, 0.05);
-		--accent-bg: rgba(206, 32, 41, 0.1);
-		--accent-bg-emphasis: rgba(206, 32, 41, 0.15);
-		--accent-border: rgba(206, 32, 41, 0.3);
+		--accent-bg-subtle: oklch(45% 0.22 25 / 5%); /* converted from rgba(206, 32, 41, 0.05) */
+		--accent-bg: oklch(45% 0.22 25 / 10%); /* converted from rgba(206, 32, 41, 0.1) */
+		--accent-bg-emphasis: oklch(45% 0.22 25 / 15%); /* converted from rgba(206, 32, 41, 0.15) */
+		--accent-border: oklch(45% 0.22 25 / 30%); /* converted from rgba(206, 32, 41, 0.3) */
 
 		/* === 5b. ACCENT ROLES ================================================
 		   Secondary, tertiary, depth, and playful accent roles surface the
@@ -85,12 +85,12 @@
 		/* Tags, highlights, notification dots */
 
 		/* Secondary accent opacity variants */
-		--accent-secondary-bg: rgba(217, 101, 43, 0.1);
-		--accent-secondary-border: rgba(217, 101, 43, 0.3);
+		--accent-secondary-bg: oklch(58% 0.15 46 / 10%); /* converted from rgba(217, 101, 43, 0.1) */
+		--accent-secondary-border: oklch(58% 0.15 46 / 30%); /* converted from rgba(217, 101, 43, 0.3) */
 
 		/* Depth accent opacity variants */
-		--accent-depth-bg: rgba(109, 63, 121, 0.1);
-		--accent-depth-border: rgba(109, 63, 121, 0.3);
+		--accent-depth-bg: oklch(38% 0.1 310 / 10%); /* converted from rgba(109, 63, 121, 0.1) */
+		--accent-depth-border: oklch(38% 0.1 310 / 30%); /* converted from rgba(109, 63, 121, 0.3) */
 
 		/* === 5c. GRADIENTS ===================================================
 		   Controlled gradient tokens for accent elements only.
@@ -104,11 +104,11 @@
 		/* === 6. CARDS ========================================================
 		   Card styling (glassmorphic dark, tactile light)
 		   ==================================================================== */
-		--card-bg: rgba(20, 16, 16, 0.4);
+		--card-bg: oklch(8% 0.01 15 / 40%); /* converted from rgba(20, 16, 16, 0.4) */
 		/* light: #f0e8dc */
-		--card-border: rgba(243, 243, 243, 0.1);
+		--card-border: oklch(97% 0 0 / 10%); /* converted from rgba(243, 243, 243, 0.1) */
 		/* light: rgba(255, 255, 255, 0.2) */
-		--card-border-hover: rgba(243, 243, 243, 0.2);
+		--card-border-hover: oklch(97% 0 0 / 20%); /* converted from rgba(243, 243, 243, 0.2) */
 		/* light: rgba(255, 255, 255, 0.4) */
 		--card-border-top: var(--card-border);
 		/* light: rgba(255, 255, 255, 0.8) */
@@ -128,13 +128,13 @@
 		   ==================================================================== */
 		--button-shadow: none;
 		/* light: layered drop shadow */
-		--button-shadow-hover: 0 4px 12px rgba(206, 32, 41, 0.3);
+		--button-shadow-hover: 0 4px 12px oklch(45% 0.22 25 / 30%); /* converted from rgba(206, 32, 41, 0.3) */
 		/* light: layered drop shadow */
-		--button-shadow-active: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+		--button-shadow-active: inset 0 2px 4px oklch(0% 0 0 / 10%); /* converted from rgba(0, 0, 0, 0.1) */
 		/* light: inset pressed */
 		--card-shadow: none;
 		/* light: directional warm shadow */
-		--card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+		--card-shadow-hover: 0 4px 12px oklch(0% 0 0 / 10%); /* converted from rgba(0, 0, 0, 0.1) */
 		/* light: directional warm shadow */
 		--input-shadow: none;
 		/* light: inset pressed */
@@ -151,14 +151,14 @@
 		/* === 9. COMPONENT SHADOWS ============================================
 		   Shadows for overlaying components
 		   ==================================================================== */
-		--shadow-header: 0 1px 2px rgba(0, 0, 0, 0.1);
+		--shadow-header: 0 1px 2px oklch(0% 0 0 / 10%); /* converted from rgba(0, 0, 0, 0.1) */
 
 		/* Select component tokens */
-		--select-selected-bg: rgba(206, 32, 41, 0.15);
-		--select-selected-highlighted-bg: rgba(206, 32, 41, 0.2);
-		--select-dropdown-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+		--select-selected-bg: oklch(45% 0.22 25 / 15%); /* converted from rgba(206, 32, 41, 0.15) */
+		--select-selected-highlighted-bg: oklch(45% 0.22 25 / 20%); /* converted from rgba(206, 32, 41, 0.2) */
+		--select-dropdown-shadow: 0 8px 24px oklch(0% 0 0 / 40%); /* converted from rgba(0, 0, 0, 0.4) */
 		/* light: rgba(60, 50, 40, 0.15) */
-		--tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+		--tooltip-shadow: 0 2px 8px oklch(0% 0 0 / 20%); /* converted from rgba(0, 0, 0, 0.2) */
 		/* light: rgba(0, 0, 0, 0.08) */
 
 		/* === 10. ELEVATION / Z-INDEX =========================================
@@ -249,13 +249,13 @@
 		   Status indicators and feedback colours
 		   ==================================================================== */
 		--colour-success: var(--hex-olive);
-		--colour-success-bg: rgba(90, 122, 71, 0.2);
+		--colour-success-bg: oklch(46% 0.1 130 / 20%); /* converted from rgba(90, 122, 71, 0.2) */
 		--colour-warning: var(--hex-amber);
-		--colour-warning-bg: rgba(212, 169, 70, 0.2);
+		--colour-warning-bg: oklch(70% 0.12 80 / 20%); /* converted from rgba(212, 169, 70, 0.2) */
 		--colour-error: var(--hex-red);
-		--colour-error-bg: rgba(206, 32, 41, 0.2);
+		--colour-error-bg: oklch(45% 0.22 25 / 20%); /* converted from rgba(206, 32, 41, 0.2) */
 		--colour-info: var(--hex-navy);
-		--colour-info-bg: rgba(46, 61, 107, 0.2);
+		--colour-info-bg: oklch(30% 0.1 260 / 20%); /* converted from rgba(46, 61, 107, 0.2) */
 
 		/* Status badge tokens (text colours for badges) */
 		--status-success-text: var(--hex-olive);
@@ -458,9 +458,9 @@
 		   Background grid visible across all pages for technical aesthetic
 		   ==================================================================== */
 		--grid-size: 40px;
-		--grid-colour: rgba(243, 243, 243, 0.03);
+		--grid-colour: oklch(97% 0 0 / 3%); /* converted from rgba(243, 243, 243, 0.03) */
 		/* light: rgba(60, 50, 40, 0.04) */
-		--grid-colour-accent: rgba(243, 243, 243, 0.06);
+		--grid-colour-accent: oklch(97% 0 0 / 6%); /* converted from rgba(243, 243, 243, 0.06) */
 		/* light: rgba(60, 50, 40, 0.08) */
 		--grid-opacity: 0.8;
 		--grid-opacity-accent: 0.6;
@@ -517,5 +517,89 @@
 			--widget-reorganise-duration: 0.01ms;
 			--widget-reorganise-stagger: 0ms;
 		}
+	}
+
+	/* Light mode token overrides — applied when data-colour-mode="light" is set on <html> */
+	[data-colour-mode='light'] {
+		/* === 2. SURFACES === */
+		--bg-primary: #f7e8d8;
+		--bg-glass: rgba(226, 218, 206, 0.5);
+		--bg-glass-solid: #dad2c6;
+
+		/* === 3. BORDERS === */
+		--border-glass: rgba(60, 50, 40, 0.08);
+		--border-glass-hover: rgba(60, 50, 40, 0.15);
+
+		/* === 4. TEXT === */
+		--text-primary: #2d2a26;
+		--text-secondary: #4a4540;
+		--text-muted: #7a746c;
+
+		/* === 5. ACCENT === */
+		--accent-hover: #b51b23;
+
+		/* === 6. CARD === */
+		--card-bg: #f0e8dc;
+		--card-border: rgba(255, 255, 255, 0.8);
+		--card-border-hover: rgba(255, 255, 255, 0.4);
+		--card-border-top: rgba(255, 255, 255, 0.8);
+		--card-border-left: rgba(255, 255, 255, 0.5);
+		--card-border-right: rgba(60, 50, 40, 0.08);
+		--card-border-bottom: rgba(60, 50, 40, 0.12);
+
+		/* === 8. INPUT === */
+		--input-bg: rgba(255, 255, 255, 0.5);
+
+		/* === 7. BUTTON SHADOWS === */
+		--button-shadow:
+			0 2px 4px rgba(60, 50, 40, 0.06), 0 4px 8px rgba(60, 50, 40, 0.08),
+			0 8px 16px rgba(60, 50, 40, 0.06);
+		--button-shadow-hover:
+			0 4px 8px rgba(60, 50, 40, 0.06), 0 8px 16px rgba(60, 50, 40, 0.08),
+			0 16px 32px rgba(60, 50, 40, 0.08);
+		--button-shadow-active:
+			inset 0 2px 4px rgba(60, 50, 40, 0.15), inset 0 1px 2px rgba(60, 50, 40, 0.1);
+		--card-shadow: 10px 10px 20px rgba(201, 193, 181, 0.4), -8px -8px 16px rgba(242, 236, 228, 0.2);
+		--card-shadow-hover:
+			12px 12px 24px rgba(201, 193, 181, 0.85), -12px -12px 24px rgba(242, 236, 228, 0.7);
+		--input-shadow: inset 0 2px 4px rgba(60, 50, 40, 0.15), inset 0 1px 2px rgba(60, 50, 40, 0.1);
+
+		/* === 13. STATE COLOURS === */
+		--colour-success-bg: rgba(90, 122, 71, 0.15);
+		--colour-warning-bg: rgba(212, 169, 70, 0.15);
+		--colour-error-bg: rgba(206, 32, 41, 0.15);
+		--colour-info-bg: rgba(46, 61, 107, 0.15);
+
+		/* === 17. CHART === */
+		--chart-axis-colour: var(--text-muted);
+		--chart-grid-colour: rgba(60, 50, 40, 0.1);
+		--chart-bg: var(--card-bg);
+		--chart-tooltip-bg: var(--bg-glass);
+		--chart-tooltip-border: var(--card-border);
+
+		/* Chart line colours (higher opacity for light mode visibility) */
+		--chart-line-primary: rgba(206, 32, 41, 0.5);
+		--chart-line-secondary: rgba(59, 130, 180, 0.4);
+		--chart-line-tertiary: rgba(217, 101, 43, 0.35);
+		--chart-line-quaternary: rgba(180, 140, 50, 0.3);
+
+		/* === 20. GRID PATTERN === */
+		--grid-colour: rgba(60, 50, 40, 0.04);
+		--grid-colour-accent: rgba(60, 50, 40, 0.08);
+		--bg-primary-rgb: 240, 232, 221;
+
+		/* === 22. BUTTON VARIANTS === */
+		--button-secondary-hover-bg: rgba(255, 255, 255, 0.7);
+		--button-secondary-hover-border: rgba(255, 255, 255, 0.9);
+		--button-ghost-hover-bg: rgba(60, 50, 40, 0.06);
+		--button-outline-hover-shadow: 0 2px 8px rgba(206, 32, 41, 0.25);
+
+		/* === 9. COMPONENT SHADOWS === */
+		--select-dropdown-shadow: 0 8px 24px rgba(60, 50, 40, 0.15);
+		--tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+		--toast-shadow: 10px 10px 20px rgba(201, 193, 181, 0.4), -8px -8px 16px rgba(242, 236, 228, 0.2);
+
+		/* === SECTION SURFACES === */
+		--section-border-top-light: rgba(255, 255, 255, 0.5);
 	}
 }
