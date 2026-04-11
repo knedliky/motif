@@ -402,6 +402,13 @@ export default defineConfig({
 				// Preserve the original module structure so each component
 				// file remains individually importable (e.g. @motif/design/Button)
 				preserveModules: true,
+				// Strip the src/ prefix so dist/ mirrors the public API surface:
+				// components/atoms/Button.js not src/components/atoms/Button.js.
+				// Keeps output paths stable as the component count grows.
+				preserveModulesRoot: 'src',
+				// Explicitly fix the output extension — prevents Rollup falling back
+				// to auto-detection as the module graph expands.
+				entryFileNames: '[name].js',
 			},
 		},
 	},

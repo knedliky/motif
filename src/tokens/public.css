@@ -61,7 +61,7 @@
 		   ==================================================================== */
 		--accent: var(--fire-engine-red);
 		--accent-hover: oklch(0.42 0.17 28);
-		--accent-rgb: (206, 32, 41);
+		--accent-rgb: 206, 32, 41;
 		/* For rgba() usage */
 
 		/* Accent opacity variants (for TagPill, badges, selection states) */
