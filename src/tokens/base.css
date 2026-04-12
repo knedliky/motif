@@ -14,8 +14,8 @@
    TYPOGRAPHY — Self-hosted via @fontsource (latin subset only, no external CDN)
    ========================================================================== */
 
-@import '@fontsource-variable/azeret-mono/latin.css';
-@import '@fontsource-variable/hanken-grotesk/latin.css';
+@import '@fontsource-variable/azeret-mono/wght.css';
+@import '@fontsource-variable/hanken-grotesk/wght.css';
 @import '@fontsource/ibm-plex-serif/latin-400.css';
 @import '@fontsource/ibm-plex-serif/latin-500.css';
 @import '@fontsource/ibm-plex-serif/latin-600.css';
