@@ -12,6 +12,8 @@
 		size?: 'default' | 'sm';
 		class?: string;
 		error?: boolean;
+		/** Briefly highlights the trigger border with --colour-success */
+		valid?: boolean;
 		disabled?: boolean;
 		theme?: 'admin' | 'public';
 		onchange?: (value: string) => void;
@@ -35,6 +37,8 @@
 	 * - Full keyboard navigation (arrows, enter, escape, home/end)
 	 * - Admin and public theme contexts via CSS custom properties
 	 * - Closes on outside click and page scroll
+	 * - Error state via error prop: border changes to --colour-error
+	 * - Success state via data-valid attribute on container: border changes to --colour-success
 	 */
 	import { getThemeVariant } from '../../contexts/theme.js';
 
@@ -45,6 +49,7 @@
 		size = 'default',
 		class: className,
 		error = false,
+		valid = false,
 		disabled = false,
 		theme,
 		onchange
@@ -239,7 +244,6 @@
 		type="button"
 		class="select-trigger {size === 'sm' ? 'select-trigger-sm' : ''} {className ?? ''}"
 		style="
-			border: 1px solid {error ? 'var(--accent)' : tokens.border};
 			color: {tokens.text};
 		"
 		{disabled}
@@ -247,6 +251,8 @@
 		onkeydown={handleKeydown}
 		aria-haspopup="listbox"
 		aria-expanded={isOpen}
+		data-invalid={error ? '' : undefined}
+		data-valid={valid ? '' : undefined}
 	>
 		<span
 			class="select-value"
@@ -344,6 +350,7 @@
 		gap: 0.75rem;
 		min-height: var(--input-height);
 		padding: 0 1.25rem;
+		border: 1px solid var(--select-border);
 		border-radius: 9999px;
 		font-size: 1rem;
 		font-family: inherit;
@@ -486,5 +493,31 @@
 	/* Light mode: neumorphic inset shadow on trigger for tactile feel */
 	:global([data-colour-mode='light']) .select-trigger {
 		box-shadow: var(--input-shadow);
+	}
+
+	/* Error state — driven by data-invalid attribute set via error prop */
+
+	.select-trigger[data-invalid] {
+		border-color: var(--colour-error);
+	}
+
+	.select-trigger[data-invalid]:focus {
+		border-color: var(--colour-error);
+		box-shadow:
+			0 0 0 2px var(--bg-primary),
+			0 0 0 4px var(--colour-error);
+	}
+
+	/* Success state — briefly shown when transitioning from error to valid */
+
+	.select-trigger[data-valid] {
+		border-color: var(--colour-success);
+	}
+
+	.select-trigger[data-valid]:focus {
+		border-color: var(--colour-success);
+		box-shadow:
+			0 0 0 2px var(--bg-primary),
+			0 0 0 4px var(--colour-success);
 	}
 </style>

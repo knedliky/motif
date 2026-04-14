@@ -23,6 +23,8 @@
 	 * - Admin theme: transparent background with admin border
 	 * - Non-resizable, min-height 180px
 	 * - Design-token-first CSS with data-attribute selectors
+	 * - Error state via aria-invalid="true": border changes to --colour-error
+	 * - Success state via data-valid attribute: border changes to --colour-success
 	 */
 	import { getThemeVariant } from '../../contexts/theme.js';
 
@@ -100,5 +102,43 @@
 		box-shadow:
 			0 0 0 2px var(--admin-bg),
 			0 0 0 4px var(--accent);
+	}
+
+	/* Error state — driven by aria-invalid attribute set by FormGroup */
+
+	.textarea[aria-invalid='true'] {
+		border-color: var(--colour-error);
+	}
+
+	.textarea[aria-invalid='true']:focus {
+		border-color: var(--colour-error);
+		box-shadow:
+			0 0 0 2px var(--bg-primary),
+			0 0 0 4px var(--colour-error);
+	}
+
+	.textarea[data-theme='admin'][aria-invalid='true']:focus {
+		box-shadow:
+			0 0 0 2px var(--admin-bg),
+			0 0 0 4px var(--colour-error);
+	}
+
+	/* Success state — briefly shown when transitioning from error to valid */
+
+	.textarea[data-valid] {
+		border-color: var(--colour-success);
+	}
+
+	.textarea[data-valid]:focus {
+		border-color: var(--colour-success);
+		box-shadow:
+			0 0 0 2px var(--bg-primary),
+			0 0 0 4px var(--colour-success);
+	}
+
+	.textarea[data-theme='admin'][data-valid]:focus {
+		box-shadow:
+			0 0 0 2px var(--admin-bg),
+			0 0 0 4px var(--colour-success);
 	}
 </style>
