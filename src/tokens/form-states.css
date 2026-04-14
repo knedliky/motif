@@ -1,0 +1,43 @@
+/**
+ * Motif Design Library — Shared Form Control State Styles
+ *
+ * Error and success focus-ring rules for all form control atoms
+ * (Input, Select, Textarea). Eliminates duplication by targeting
+ * the shared `.motif-form-control` class that each atom applies
+ * to its interactive element.
+ *
+ * Theme handling:
+ * - Public context: inner ring uses var(--bg-primary)
+ * - Admin context: inner ring uses var(--admin-bg)
+ * - Select overrides this via scoped --select-bg custom property
+ *
+ * Usage:
+ *   @import '@motif/design/form-states';
+ *   (imported automatically by base.css)
+ */
+
+/* Error state — driven by aria-invalid="true" set via error prop or FormGroup */
+
+.motif-form-control[aria-invalid='true'] {
+	border-color: var(--colour-error);
+}
+
+.motif-form-control[aria-invalid='true']:focus {
+	border-color: var(--colour-error);
+	box-shadow:
+		0 0 0 2px var(--form-ring-bg, var(--bg-primary)),
+		0 0 0 4px var(--colour-error);
+}
+
+/* Success state — briefly shown when transitioning from error to valid */
+
+.motif-form-control[data-valid='true'] {
+	border-color: var(--colour-success);
+}
+
+.motif-form-control[data-valid='true']:focus {
+	border-color: var(--colour-success);
+	box-shadow:
+		0 0 0 2px var(--form-ring-bg, var(--bg-primary)),
+		0 0 0 4px var(--colour-success);
+}

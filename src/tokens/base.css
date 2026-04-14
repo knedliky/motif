@@ -11,6 +11,12 @@
  */
 
 /* ==========================================================================
+   FORM CONTROL STATES — Shared error/success focus-ring rules
+   ========================================================================== */
+
+@import './form-states.css';
+
+/* ==========================================================================
    TYPOGRAPHY — Self-hosted via @fontsource (latin subset only, no external CDN)
    ========================================================================== */
 
@@ -381,7 +387,10 @@ body {
 		border: 1px solid var(--border-glass);
 	}
 
-	/* Card utility — applies all card styles */
+	/* Card utility — applies all card styles.
+	   Prefer using the Card.svelte component which owns these styles
+	   internally. This global class is kept for non-component contexts
+	   (e.g. SkeletonHero) where a Svelte component wrapper is impractical. */
 	.card-glass {
 		background: var(--card-bg);
 		border: 1px solid var(--card-border);

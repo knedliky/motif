@@ -16,7 +16,8 @@
     },
     "./public": "./src/tokens/public.css",
     "./admin": "./src/tokens/admin.css",
-    "./base": "./src/tokens/base.css"
+    "./base": "./src/tokens/base.css",
+    "./form-states": "./src/tokens/form-states.css"
   },
   "scripts": {
     "dev": "echo 'dev script — to be configured in task 002'",

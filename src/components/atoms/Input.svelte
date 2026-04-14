@@ -25,7 +25,7 @@
 	 * - Admin theme: transparent background with admin border
 	 * - Design-token-first CSS with data-attribute selectors
 	 * - Error state via aria-invalid="true": border changes to --colour-error
-	 * - Success state via data-valid attribute: border changes to --colour-success
+	 * - Success state via data-valid="true" attribute: border changes to --colour-success
 	 */
 	import { getThemeVariant } from '../../contexts/theme.js';
 
@@ -41,9 +41,10 @@
 </script>
 
 <input
-	class="input {className ?? ''}"
+	class="input motif-form-control {className ?? ''}"
 	data-theme={activeTheme}
 	data-size={size}
+	style={activeTheme === 'admin' ? '--form-ring-bg: var(--admin-bg)' : undefined}
 	bind:value
 	{...rest}
 />
@@ -129,41 +130,7 @@
 			0 0 0 4px var(--accent);
 	}
 
-	/* Error state — driven by aria-invalid attribute set by FormGroup */
-
-	.input[aria-invalid='true'] {
-		border-color: var(--colour-error);
-	}
-
-	.input[aria-invalid='true']:focus {
-		border-color: var(--colour-error);
-		box-shadow:
-			0 0 0 2px var(--bg-primary),
-			0 0 0 4px var(--colour-error);
-	}
-
-	.input[data-theme='admin'][aria-invalid='true']:focus {
-		box-shadow:
-			0 0 0 2px var(--admin-bg),
-			0 0 0 4px var(--colour-error);
-	}
-
-	/* Success state — briefly shown when transitioning from error to valid */
-
-	.input[data-valid] {
-		border-color: var(--colour-success);
-	}
-
-	.input[data-valid]:focus {
-		border-color: var(--colour-success);
-		box-shadow:
-			0 0 0 2px var(--bg-primary),
-			0 0 0 4px var(--colour-success);
-	}
-
-	.input[data-theme='admin'][data-valid]:focus {
-		box-shadow:
-			0 0 0 2px var(--admin-bg),
-			0 0 0 4px var(--colour-success);
-	}
+	/* Error and success focus-ring states are handled by the shared
+	   .motif-form-control rules in form-states.css (imported via base.css).
+	   The --form-ring-bg custom property is set inline for admin context. */
 </style>

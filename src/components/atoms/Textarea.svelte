@@ -24,7 +24,7 @@
 	 * - Non-resizable, min-height 180px
 	 * - Design-token-first CSS with data-attribute selectors
 	 * - Error state via aria-invalid="true": border changes to --colour-error
-	 * - Success state via data-valid attribute: border changes to --colour-success
+	 * - Success state via data-valid="true" attribute: border changes to --colour-success
 	 */
 	import { getThemeVariant } from '../../contexts/theme.js';
 
@@ -33,7 +33,12 @@
 	const activeTheme = $derived(theme ?? getThemeVariant());
 </script>
 
-<textarea class="textarea {className ?? ''}" data-theme={activeTheme} bind:value {...rest}
+<textarea
+	class="textarea motif-form-control {className ?? ''}"
+	data-theme={activeTheme}
+	style={activeTheme === 'admin' ? '--form-ring-bg: var(--admin-bg)' : undefined}
+	bind:value
+	{...rest}
 ></textarea>
 
 <style>
@@ -104,41 +109,7 @@
 			0 0 0 4px var(--accent);
 	}
 
-	/* Error state — driven by aria-invalid attribute set by FormGroup */
-
-	.textarea[aria-invalid='true'] {
-		border-color: var(--colour-error);
-	}
-
-	.textarea[aria-invalid='true']:focus {
-		border-color: var(--colour-error);
-		box-shadow:
-			0 0 0 2px var(--bg-primary),
-			0 0 0 4px var(--colour-error);
-	}
-
-	.textarea[data-theme='admin'][aria-invalid='true']:focus {
-		box-shadow:
-			0 0 0 2px var(--admin-bg),
-			0 0 0 4px var(--colour-error);
-	}
-
-	/* Success state — briefly shown when transitioning from error to valid */
-
-	.textarea[data-valid] {
-		border-color: var(--colour-success);
-	}
-
-	.textarea[data-valid]:focus {
-		border-color: var(--colour-success);
-		box-shadow:
-			0 0 0 2px var(--bg-primary),
-			0 0 0 4px var(--colour-success);
-	}
-
-	.textarea[data-theme='admin'][data-valid]:focus {
-		box-shadow:
-			0 0 0 2px var(--admin-bg),
-			0 0 0 4px var(--colour-success);
-	}
+	/* Error and success focus-ring states are handled by the shared
+	   .motif-form-control rules in form-states.css (imported via base.css).
+	   The --form-ring-bg custom property is set inline for admin context. */
 </style>

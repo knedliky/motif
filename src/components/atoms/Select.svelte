@@ -37,8 +37,8 @@
 	 * - Full keyboard navigation (arrows, enter, escape, home/end)
 	 * - Admin and public theme contexts via CSS custom properties
 	 * - Closes on outside click and page scroll
-	 * - Error state via error prop: border changes to --colour-error
-	 * - Success state via data-valid attribute on container: border changes to --colour-success
+	 * - Error state via aria-invalid="true" (set from error prop): border changes to --colour-error
+	 * - Success state via data-valid="true" attribute (set from valid prop): border changes to --colour-success
 	 */
 	import { getThemeVariant } from '../../contexts/theme.js';
 
@@ -71,6 +71,13 @@
 		return activeTheme === 'admin' ? `var(${adminToken})` : `var(${publicToken})`;
 	}
 
+	/**
+	 * Theme-aware token map — resolves public vs admin CSS custom properties.
+	 * Note: var(--accent) and var(--colour-error/success) are used directly
+	 * in the template because they are context-independent (shared across both
+	 * themes, not overridden in admin.css). Only tokens that differ between
+	 * admin and public contexts need the getThemeToken indirection.
+	 */
 	const tokens = $derived({
 		text: getThemeToken('--text-primary', '--admin-text'),
 		textSecondary: getThemeToken('--text-secondary', '--admin-text-secondary'),
@@ -242,17 +249,18 @@
 	<button
 		bind:this={triggerRef}
 		type="button"
-		class="select-trigger {size === 'sm' ? 'select-trigger-sm' : ''} {className ?? ''}"
+		class="select-trigger motif-form-control {size === 'sm' ? 'select-trigger-sm' : ''} {className ?? ''}"
 		style="
 			color: {tokens.text};
+			--form-ring-bg: var(--select-bg);
 		"
 		{disabled}
 		onclick={toggleDropdown}
 		onkeydown={handleKeydown}
 		aria-haspopup="listbox"
 		aria-expanded={isOpen}
-		data-invalid={error ? '' : undefined}
-		data-valid={valid ? '' : undefined}
+		aria-invalid={error ? 'true' : undefined}
+		data-valid={valid ? 'true' : undefined}
 	>
 		<span
 			class="select-value"
@@ -378,7 +386,7 @@
 		outline: none;
 		border-color: var(--select-text-secondary);
 		box-shadow:
-			0 0 0 2px var(--bg-primary),
+			0 0 0 2px var(--select-bg),
 			0 0 0 4px var(--accent);
 	}
 
@@ -495,29 +503,8 @@
 		box-shadow: var(--input-shadow);
 	}
 
-	/* Error state — driven by data-invalid attribute set via error prop */
-
-	.select-trigger[data-invalid] {
-		border-color: var(--colour-error);
-	}
-
-	.select-trigger[data-invalid]:focus {
-		border-color: var(--colour-error);
-		box-shadow:
-			0 0 0 2px var(--bg-primary),
-			0 0 0 4px var(--colour-error);
-	}
-
-	/* Success state — briefly shown when transitioning from error to valid */
-
-	.select-trigger[data-valid] {
-		border-color: var(--colour-success);
-	}
-
-	.select-trigger[data-valid]:focus {
-		border-color: var(--colour-success);
-		box-shadow:
-			0 0 0 2px var(--bg-primary),
-			0 0 0 4px var(--colour-success);
-	}
+	/* Error and success focus-ring states are handled by the shared
+	   .motif-form-control rules in form-states.css (imported via base.css).
+	   The --form-ring-bg custom property is set inline to var(--select-bg)
+	   so the inner ring colour respects the admin/public theme. */
 </style>
