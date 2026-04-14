@@ -47,13 +47,15 @@
 />
 
 <style>
-	/* shared input styling */
+	/* Shared input styling — pill shape to match Button */
 	.input {
 		display: flex;
 		width: 100%;
 		font-size: 1rem;
-		transition: border-color var(--transition-normal);
-		border-radius: var(--card-radius);
+		transition:
+			border-color var(--transition-normal),
+			box-shadow var(--transition-normal);
+		border-radius: 9999px;
 	}
 
 	.input:focus {
@@ -101,6 +103,9 @@
 
 	.input[data-theme='public']:focus {
 		border-color: var(--card-border-hover);
+		box-shadow:
+			0 0 0 2px var(--bg-primary),
+			0 0 0 4px var(--accent);
 	}
 
 	/* Admin theme */
@@ -117,5 +122,8 @@
 
 	.input[data-theme='admin']:focus {
 		border-color: var(--admin-text-muted);
+		box-shadow:
+			0 0 0 2px var(--admin-bg),
+			0 0 0 4px var(--accent);
 	}
 </style>

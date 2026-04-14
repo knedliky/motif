@@ -344,14 +344,15 @@
 		gap: 0.75rem;
 		min-height: var(--input-height);
 		padding: 0 1.25rem;
-		border-radius: var(--radius-pill);
+		border-radius: 9999px;
 		font-size: 1rem;
 		font-family: inherit;
 		cursor: pointer;
 		background: var(--select-input-bg);
 		transition:
 			border-color var(--transition-normal),
-			background-color var(--transition-normal);
+			background-color var(--transition-normal),
+			box-shadow var(--transition-normal);
 		text-align: left;
 		white-space: nowrap;
 	}
@@ -369,6 +370,9 @@
 	.select-trigger:focus {
 		outline: none;
 		border-color: var(--select-text-secondary);
+		box-shadow:
+			0 0 0 2px var(--bg-primary),
+			0 0 0 4px var(--accent);
 	}
 
 	.select-trigger:disabled {
@@ -395,7 +399,7 @@
 		width: max-content;
 		max-height: 280px;
 		overflow-y: auto;
-		border-radius: var(--card-radius);
+		border-radius: var(--radius-lg);
 		box-shadow: var(--select-dropdown-shadow);
 		/* Fade in to prevent position-calculation flicker */
 		animation: selectDropdownFadeIn 0.1s ease;
@@ -446,15 +450,15 @@
 	}
 
 	.select-option:first-child {
-		border-radius: calc(var(--card-radius) - 1px) calc(var(--card-radius) - 1px) 0 0;
+		border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
 	}
 
 	.select-option:last-child {
-		border-radius: 0 0 calc(var(--card-radius) - 1px) calc(var(--card-radius) - 1px);
+		border-radius: 0 0 calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px);
 	}
 
 	.select-option:only-child {
-		border-radius: calc(var(--card-radius) - 1px);
+		border-radius: calc(var(--radius-lg) - 1px);
 	}
 
 	.select-check {

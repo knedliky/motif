@@ -41,9 +41,11 @@
 		width: 100%;
 		resize: none;
 		font-size: 1rem;
-		border-radius: var(--card-radius);
+		border-radius: var(--radius-lg);
 		padding: var(--space-4) var(--space-5);
-		transition: border-color var(--transition-normal);
+		transition:
+			border-color var(--transition-normal),
+			box-shadow var(--transition-normal);
 	}
 
 	@media (min-width: 768px) {
@@ -76,6 +78,9 @@
 
 	.textarea[data-theme='public']:focus {
 		border-color: var(--card-border-hover);
+		box-shadow:
+			0 0 0 2px var(--bg-primary),
+			0 0 0 4px var(--accent);
 	}
 
 	/* Admin theme */
@@ -92,5 +97,8 @@
 
 	.textarea[data-theme='admin']:focus {
 		border-color: var(--admin-text-muted);
+		box-shadow:
+			0 0 0 2px var(--admin-bg),
+			0 0 0 4px var(--accent);
 	}
 </style>
