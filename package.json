@@ -10,9 +10,9 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/design.js",
       "types": "./dist/index.d.ts",
-      "svelte": "./src/index.ts"
+      "svelte": "./src/index.ts",
+      "import": "./dist/index.js"
     },
     "./public": "./src/tokens/public.css",
     "./admin": "./src/tokens/admin.css",
