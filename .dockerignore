@@ -1,0 +1,8 @@
+node_modules/
+.git/
+dist/
+.svelte-kit/
+.DS_Store
+*.md
+.storybook/
+storybook-static/
