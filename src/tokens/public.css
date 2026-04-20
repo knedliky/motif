@@ -142,7 +142,7 @@
 		/* === 8. INPUTS =======================================================
 		   Form field styling — heights match Button size tiers
 		   ==================================================================== */
-		--input-bg: transparent;
+		--input-bg: oklch(22% 0.015 30);
 		/* light: rgba(255, 255, 255, 0.5) */
 		--input-height: 3rem;
 		--input-height-sm: 2.5rem;

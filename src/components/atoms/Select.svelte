@@ -295,7 +295,7 @@
 				top: {dropdownPosition.top}px;
 				left: {dropdownPosition.left}px;
 				min-width: {dropdownPosition.minWidth}px;
-				background: {tokens.background};
+				background: {tokens.inputBg};
 				border: 1px solid {tokens.border};
 			"
 		>
@@ -382,7 +382,7 @@
 		border-color: var(--select-text-muted);
 	}
 
-	.select-trigger:focus {
+	.select-trigger:focus-visible {
 		outline: none;
 		border-color: var(--select-text-secondary);
 		box-shadow:
