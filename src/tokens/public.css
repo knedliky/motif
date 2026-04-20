@@ -548,7 +548,7 @@
 		--card-border-bottom: oklch(25% 0.02 55 / 12%); /* converted from rgba(60, 50, 40, 0.12) */
 
 		/* === 8. INPUT === */
-		--input-bg: oklch(100% 0 0 / 50%); /* converted from rgba(255, 255, 255, 0.5) */
+		--input-bg: oklch(88% 0.02 55 / 50%); /* warm tint — defines field boundary without raised/white look */
 
 		/* === 7. BUTTON SHADOWS === */
 		--button-shadow:
@@ -562,7 +562,7 @@
 		--card-shadow: 10px 10px 20px oklch(78% 0.01 55 / 40%), -8px -8px 16px oklch(95% 0.02 55 / 20%); /* converted from rgba(201,193,181,...) */
 		--card-shadow-hover:
 			12px 12px 24px oklch(78% 0.01 55 / 85%), -12px -12px 24px oklch(95% 0.02 55 / 70%); /* converted from rgba(201,193,181,...) */
-		--input-shadow: inset 0 2px 4px oklch(25% 0.02 55 / 15%), inset 0 1px 2px oklch(25% 0.02 55 / 10%); /* converted from rgba(60, 50, 40, ...) */
+		--input-shadow: none; /* flat — matches dark mode; no neumorphic inset */
 
 		/* === 13. STATE COLOURS === */
 		--colour-success-bg: oklch(46% 0.1 130 / 15%); /* converted from rgba(90, 122, 71, 0.15) */

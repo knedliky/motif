@@ -498,11 +498,6 @@
 		background: var(--select-text-muted);
 	}
 
-	/* Light mode: neumorphic inset shadow on trigger for tactile feel */
-	:global([data-colour-mode='light']) .select-trigger {
-		box-shadow: var(--input-shadow);
-	}
-
 	/* Error and success focus-ring states are handled by the shared
 	   .motif-form-control rules in form-states.css (imported via base.css).
 	   The --form-ring-bg custom property is set inline to var(--select-bg)
