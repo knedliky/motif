@@ -548,7 +548,7 @@
 		--card-border-bottom: oklch(25% 0.02 55 / 12%); /* converted from rgba(60, 50, 40, 0.12) */
 
 		/* === 8. INPUT === */
-		--input-bg: oklch(94% 0.015 55 / 40%); /* very subtle warm tint — nearly blends with page surface */
+		--input-bg: oklch(94% 0.015 55); /* opaque warm tint — flat like dark mode, no transparency bleed */
 
 		/* === 7. BUTTON SHADOWS === */
 		--button-shadow:
