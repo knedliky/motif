@@ -6,11 +6,11 @@
   "description": "Motif design library — tokens and atoms for externally-facing SvelteKit projects",
   "files": [
     "dist",
-    "src/tokens"
+    "src"
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./src/index.ts",
       "svelte": "./src/index.ts",
       "import": "./dist/index.js"
     },
