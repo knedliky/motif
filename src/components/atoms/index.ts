@@ -18,7 +18,7 @@ export { default as Toggle } from './Toggle.svelte';
 export type { ToggleProps } from './Toggle.svelte';
 
 export { default as TagPill } from './TagPill.svelte';
-export type { TagPillProps } from './TagPill.svelte';
+export type { TagPillProps, TagPillColour } from './TagPill.svelte';
 
 export { default as Tooltip } from './Tooltip.svelte';
 export type { TooltipProps } from './Tooltip.svelte';
