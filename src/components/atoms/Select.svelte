@@ -293,11 +293,9 @@
 		--select-bg: {tokens.background};
 		--select-bg-elevated: {tokens.backgroundElevated};
 		--select-input-bg: {tokens.inputBg};
-		--select-selected-bg: color-mix(in oklch, var(--accent) 15%, transparent);
-		--select-selected-highlighted-bg: color-mix(in oklch, var(--accent) 24%, transparent);
-		--select-highlighted-bg: color-mix(in oklch, var(--select-text) 6%, transparent);
-		--select-dropdown-shadow: var(--shadow-xl);
-	"
+		--select-highlighted-bg: color-mix(in oklch, var(--select-text) 10%, transparent);
+			--select-dropdown-shadow: var(--shadow-xl);
+"
 >
 	<button
 		bind:this={triggerRef}
@@ -382,13 +380,7 @@
 							style="
 								{option.style ?? ''}
 								color: {isSelected ? 'var(--accent)' : tokens.text};
-								background: {isSelected
-								? isHighlighted
-									? 'var(--select-selected-highlighted-bg)'
-									: 'var(--select-selected-bg)'
-								: isHighlighted
-									? 'var(--select-highlighted-bg)'
-									: 'transparent'};
+								background: {isHighlighted ? 'var(--select-highlighted-bg)' : 'transparent'};
 							"
 							onclick={() => selectOption(option)}
 							onmouseenter={() => (highlightedIndex = index)}
@@ -552,10 +544,16 @@
 	}
 
 	/* Scroll container — only the option list scrolls, keeping any search input
-	   pinned to the top of the dropdown shell. */
+	   pinned to the top of the dropdown shell. The scrollbar is unified with the
+	   dropdown surface rather than the global accent-red thumb: the standard
+	   scrollbar-color property is set explicitly here so it overrides the global
+	   `* { scrollbar-color }` rule in base.css (Chrome honours the standard
+	   property over the ::-webkit-scrollbar pseudos when both are present). */
 	.select-options {
 		overflow-y: auto;
 		min-height: 0;
+		scrollbar-width: thin;
+		scrollbar-color: var(--select-border) transparent;
 	}
 
 	/* Empty state shown when the search query matches nothing. */
